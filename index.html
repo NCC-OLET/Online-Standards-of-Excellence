@@ -1,1 +1,171 @@
+<!doctype html>
+<html>
+<span>
+<head>
+<meta charset="utf-8">
+<style>
+#myInput {
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 2px solid #004C8E; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+background-color: white;
+text-decoration-color: #004C8E;
+	color:#004C8E
+}
+#myUL {
+	/* Remove default list styling */
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+#myUL li:hover:not(.panel)
+	{
+		background: #004C8E;
+		color:white;
+	}
+	
+
+#myUL li {
+  border: 1px solid white; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #004C8E; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: white; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+	
+	#myUL li button:active {
+		background: #004C8E;
+	}
+
+#myUL li a:hover:not(.header) {
+  background-color: #inherit; /* Add a hover effect to all links, except for headers */
+	color: #004C8E
+}
+	
+	#myUL li a:hover {
+		color: #black
+	}
+	
+	#myUL li a:link {
+		color: #004C8E
+	}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #004C8E;
+  opacity: 1; /* Firefox */
+}
+.accordion:not(a) {
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: #004C8E;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+	color: 004C8E;
+}
+
+
+.active {
+  background-color: #004C8E;
+	color:#004C8E;
+	border: #004C8E;
+	border-width: thin;
+	}
+	
+	.accordion:hover {
+  background-color: #004C8E;
+	color:inherit;
+	border: #004C8E;
+	border-width: thin;
+	}
+	.accordion:active {
+  background-color: #004C8E;
+	color:inherit;
+	border: #004C8E;
+	border-width: thin;
+
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+	color: black;
+  overflow: hidden;
+	}
+	.a {background-color: white;
+	}
+#myUL li a:visited
+	{
+		color:#004C8E
+	}
+
+	</style>
+<title>I need help with...</title>
+</head>
+<input type="text" id="myInput" onkeyup="myFunction()" style="width: 20%" placeholder="Search...">
+<ul id="myUL">
+
+<li><button class="accordion">Adobe Creative Cloud</button>
+<div class="panel">
+  <p>Adobe Creative Cloud is a product that is used for specific courses only. It is not available to all NCC students. For assistance with accessing this product, contact <a href="mailto:helpdesk@northampton.edu">helpdesk@northampton.edu</a> or call 610-861-5413.</p>
+</div></li>
+	<li><button class="accordion">BioSig-ID</button>
+<div class="panel">
+  <p>
+	  A few specific courses utilize this tool. If it's being utilized in your course, it will be noted by your instructor on Blackboard.
+	  <br><br>
+	  For help with BioSig-ID, go to <a href="https://bpe-help.biosig-id.com/portal/en/home" target="new">https://bpe-help.biosig-id.com/portal/en/home</a>. You can search for help or click “Submit a ticket” at the bottom of the page to get assistance.</p>
+</div></li>
+	
+</ul>
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, button, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    button = li[i].getElementsByTagName("button")[0];
+    txtValue = button.textContent || button.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+</span>
+</html>
 
